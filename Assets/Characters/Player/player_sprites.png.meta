@@ -1,0 +1,451 @@
+fileFormatVersion: 2
+guid: d662d6488d7fc415d893f27706c96b49
+timeCreated: 1479533471
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: player_left_leaf
+    21300002: player_right_leaf
+    21300004: player_bottom_finger
+    21300006: player_left_eyebrow
+    21300008: player_right_eyebrow
+    21300010: player_right_eye
+    21300012: player_left_eye
+    21300014: player_mouth
+    21300016: player_root3_top
+    21300018: player_root3_top_back
+    21300020: player_top_finger
+    21300022: player_middle_finger
+    21300024: player_botarm
+    21300026: player_toparm
+    21300028: player_toparm_back
+    21300030: player_botarm_back
+    21300032: player_root3_bot
+    21300034: player_root3_bot_back
+    21300036: player_branches
+    21300038: player_root2_top
+    21300040: player_root2_top_back
+    21300042: player_root2_bot
+    21300044: player_root2_bot_back
+    21300046: player_trunk
+    21300048: player_root1_top
+    21300050: player_root1_top_back
+    21300052: player_root1_bot
+    21300054: player_root1_bot_back
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: player_left_leaf
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 927
+        width: 74
+        height: 83
+      alignment: 9
+      pivot: {x: 0.90095085, y: 0.96918535}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_right_leaf
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 927
+        width: 74
+        height: 83
+      alignment: 9
+      pivot: {x: 0.09904893, y: 0.9580144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_bottom_finger
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 938
+        width: 23
+        height: 52
+      alignment: 9
+      pivot: {x: 0.6209385, y: 0.91010815}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_left_eyebrow
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 959
+        width: 26
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_right_eyebrow
+      rect:
+        serializedVersion: 2
+        x: 422
+        y: 964
+        width: 42
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_right_eye
+      rect:
+        serializedVersion: 2
+        x: 520
+        y: 907
+        width: 28
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_left_eye
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 927
+        width: 26
+        height: 39
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_mouth
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 952
+        width: 48
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root3_top
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 811
+        width: 35
+        height: 51
+      alignment: 9
+      pivot: {x: 0.55286777, y: 0.8809599}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root3_top_back
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 811
+        width: 35
+        height: 51
+      alignment: 9
+      pivot: {x: 0.44713178, y: 0.8628193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_top_finger
+      rect:
+        serializedVersion: 2
+        x: 212
+        y: 829
+        width: 42
+        height: 24
+      alignment: 9
+      pivot: {x: 0.12795657, y: 0.19361115}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_middle_finger
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 823
+        width: 47
+        height: 31
+      alignment: 9
+      pivot: {x: 0.03063835, y: 0.91510797}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_botarm
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 812
+        width: 38
+        height: 47
+      alignment: 9
+      pivot: {x: 0.18554848, y: 0.832465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_toparm
+      rect:
+        serializedVersion: 2
+        x: 529
+        y: 818
+        width: 124
+        height: 41
+      alignment: 9
+      pivot: {x: 0.9521706, y: 0.63451254}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_toparm_back
+      rect:
+        serializedVersion: 2
+        x: 712
+        y: 818
+        width: 124
+        height: 41
+      alignment: 9
+      pivot: {x: 0.040417086, y: 0.6569303}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_botarm_back
+      rect:
+        serializedVersion: 2
+        x: 887
+        y: 816
+        width: 38
+        height: 47
+      alignment: 9
+      pivot: {x: 0.8386407, y: 0.81290776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root3_bot
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 714
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.55968916, y: 0.9250868}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root3_bot_back
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 716
+        width: 31
+        height: 37
+      alignment: 9
+      pivot: {x: 0.4701553, y: 0.9250868}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_branches
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 442
+        width: 601
+        height: 293
+      alignment: 9
+      pivot: {x: 0.54417807, y: 0.019028699}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root2_top
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 563
+        width: 54
+        height: 83
+      alignment: 9
+      pivot: {x: 0.702855, y: 0.91993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root2_top_back
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 569
+        width: 54
+        height: 83
+      alignment: 9
+      pivot: {x: 0.27870375, y: 0.93192744}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root2_bot
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 368
+        width: 50
+        height: 138
+      alignment: 9
+      pivot: {x: 0.7190834, y: 0.9474034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root2_bot_back
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 370
+        width: 50
+        height: 138
+      alignment: 9
+      pivot: {x: 0.3406665, y: 0.9474034}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_trunk
+      rect:
+        serializedVersion: 2
+        x: 582
+        y: 36
+        width: 257
+        height: 373
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root1_top
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 197
+        width: 98
+        height: 118
+      alignment: 9
+      pivot: {x: 0.8230303, y: 0.82885844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root1_top_back
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 203
+        width: 98
+        height: 118
+      alignment: 9
+      pivot: {x: 0.17696957, y: 0.8202044}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root1_bot
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 30
+        width: 122
+        height: 117
+      alignment: 9
+      pivot: {x: 0.8180765, y: 0.95386356}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: player_root1_bot_back
+      rect:
+        serializedVersion: 2
+        x: 358
+        y: 29
+        width: 122
+        height: 117
+      alignment: 9
+      pivot: {x: 0.14844175, y: 0.9364072}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
