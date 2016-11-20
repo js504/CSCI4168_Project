@@ -3,8 +3,8 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
-	public GameObject player;
 	public Animator animator;
+	public float speed = 5.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -15,6 +15,14 @@ public class PlayerControl : MonoBehaviour {
 	void Update () {
 		if (Input.GetAxis ("Horizontal") != 0) {
 			animator.SetBool ("walking", true);
+//
+//			if (Input.GetAxis ("Horizontal") < 0) {
+//				transform.rotation = Quaternion.Euler (0, 180, 0);
+//				transform.Translate (Vector3.right * Time.deltaTime * speed);
+//			} else if (Input.GetAxis ("Horizontal") > 0){
+//				transform.rotation = Quaternion.Euler (0, 0, 0);
+//				transform.Translate (Vector3.left * Time.deltaTime * speed);
+//			}
 		} else {
 			animator.SetBool ("walking", false);
 		}
