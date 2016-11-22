@@ -70,4 +70,13 @@ public class PlayerControl : MonoBehaviour {
 
 
 	}
+
+	//an acron object will be deactivated everytime it collides with the player
+	void OnTriggerEnter(Collider other)
+	{
+		if (other.gameObject.CompareTag ("Pick Up")) 
+		{
+			other.gameObject.SetActive (false);
+		}
+	}
 }
