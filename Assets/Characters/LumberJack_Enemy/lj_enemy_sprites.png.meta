@@ -1,0 +1,255 @@
+fileFormatVersion: 2
+guid: 6f3d44d210b76429aafe5b172bb9ed41
+timeCreated: 1479935646
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: lj_enemy_shoulder
+    21300002: lj_enemy_hatTop
+    21300004: lj_enemy_body
+    21300006: lj_enemy_elbow
+    21300008: lj_enemy_hatBottom
+    21300010: lj_enemy_forearm
+    21300012: lj_enemy_belt
+    21300014: lj_enemy_hand
+    21300016: lj_enemy_leg
+    21300018: lj_enemy_beard
+    21300020: lj_enemy_nose
+    21300022: lj_enemy_bootTop
+    21300024: lj_enemy_face
+    21300026: lj_enemy_bootBottom
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -3
+  maxTextureSize: 8192
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lj_enemy_shoulder
+      rect:
+        serializedVersion: 2
+        x: 23
+        y: 888
+        width: 109
+        height: 122
+      alignment: 9
+      pivot: {x: 0.50000006, y: 0.88537395}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_hatTop
+      rect:
+        serializedVersion: 2
+        x: 289
+        y: 865
+        width: 178
+        height: 132
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_body
+      rect:
+        serializedVersion: 2
+        x: 623
+        y: 628
+        width: 338
+        height: 340
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_elbow
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 784
+        width: 109
+        height: 55
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.88467354}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_hatBottom
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 708
+        width: 223
+        height: 131
+      alignment: 9
+      pivot: {x: 0.4894583, y: 0.4820552}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_forearm
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 619
+        width: 125
+        height: 132
+      alignment: 9
+      pivot: {x: 0.575225, y: 0.9274149}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_belt
+      rect:
+        serializedVersion: 2
+        x: 211
+        y: 604
+        width: 323
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_hand
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 488
+        width: 109
+        height: 80
+      alignment: 9
+      pivot: {x: 0.5215669, y: 0.7938477}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_leg
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 395
+        width: 244
+        height: 129
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.8826855}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_beard
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 70
+        width: 204
+        height: 478
+      alignment: 9
+      pivot: {x: 0.48847693, y: 0.8590106}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_nose
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 362
+        width: 125
+        height: 71
+      alignment: 9
+      pivot: {x: 0.7256749, y: 0.2682336}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_bootTop
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 283
+        width: 241
+        height: 57
+      alignment: 9
+      pivot: {x: 0.5195085, y: 0.2525501}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_face
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 124
+        width: 172
+        height: 133
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: lj_enemy_bootBottom
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 69
+        width: 281
+        height: 157
+      alignment: 9
+      pivot: {x: 0.58365756, y: 0.9042745}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
