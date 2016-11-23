@@ -8,4 +8,8 @@ public class MenuControl : MonoBehaviour {
 	public void NewGameHandler(){
 		Application.LoadLevel (1);
 	}
+
+	public void ExitGameHandler(){
+		Application.Quit ();
+	}
 }
