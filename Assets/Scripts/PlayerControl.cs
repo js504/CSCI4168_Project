@@ -23,18 +23,17 @@ public class PlayerControl : MonoBehaviour {
 			animator.SetBool ("walking", true);
 
 			if (Input.GetAxis ("Horizontal") > 0) {
-				print ("right");
 				if (!facingRight) {
 					FlipDirection ();
 				}
+
 				transform.Translate (Vector3.right * Time.deltaTime * speed);
 			} else if (Input.GetAxis ("Horizontal") < 0){
 
-				print ("left");
 				if (facingRight) {
 					FlipDirection ();
 				}
-//				transform.rotation = Quaternion.Euler (0, 0, 0);
+
 				transform.Translate (Vector3.left * Time.deltaTime * speed * -1f);
 			}
 		} else {
