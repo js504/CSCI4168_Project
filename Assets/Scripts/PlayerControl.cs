@@ -18,7 +18,7 @@ public class PlayerControl : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void FixedUpdate () {
 		if (Input.GetAxis ("Horizontal") != 0) {
 			animator.SetBool ("walking", true);
 
@@ -44,8 +44,6 @@ public class PlayerControl : MonoBehaviour {
 
 	void FlipDirection(){
 		
-//		Vector3 scale = transform.localScale;
-//		scale.x *= -1;
 		facingRight = !facingRight;
 	
 		Quaternion cameraRot = Camera.main.transform.localRotation;
