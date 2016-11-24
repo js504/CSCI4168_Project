@@ -1,15 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class PlayerControl : MonoBehaviour {
 
 	public Animator animator;
 	public float speed = 10.0f;
+	public Text livesText;
 	bool facingRight = true;
+
+	private int countlives; //counting lives
 
 	// Use this for initialization
 	void Start () {
-
+		countlives = 5; //started lives from five, will increase when picking up acrons and decrease when losing a fight with enemy 
+		SetLivesText (); // calling the function to display lives on screen
 	}
 	
 	// Update is called once per frame
@@ -77,6 +82,15 @@ public class PlayerControl : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Pick Up")) 
 		{
 			other.gameObject.SetActive (false);
+			countlives = countlives + 1;
+			SetLivesText (); // calling the function to keep updating on desplay lives
 		}
 	}
+
+	void SetLivesText ()
+	{
+		livesText.text= "Lives: " + countlives.ToString();
+	}
+
+
 }
