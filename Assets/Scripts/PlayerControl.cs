@@ -45,28 +45,33 @@ public class PlayerControl : MonoBehaviour {
 		
 		facingRight = !facingRight;
 	
-		Quaternion cameraRot = Camera.main.transform.localRotation;
+		Vector3 cameraRot = Camera.main.transform.eulerAngles;
 		Vector3 cameraPos = Camera.main.transform.localPosition;
-		Quaternion playerRot = transform.localRotation;
+		Vector3 playerRot = transform.eulerAngles;
 
 		if (!facingRight) {
 			print ("changing Rot1");
 			cameraRot.y = 180f;
 			playerRot.y = 180f;
 
+
 		} else {
 			print ("changing Rot2");
-			cameraRot.y = 0f;
+			cameraRot.y = 180f;
 			playerRot.y = 0f;
 
+
 		}
+
+		Camera.main.transform.eulerAngles = cameraRot;
+
 		cameraPos.z *= -1f;
 		cameraPos.x *= -1f;
 
-		transform.localRotation = playerRot;
 
-		Camera.main.transform.localRotation = cameraRot;
 
+		transform.eulerAngles = playerRot;
+		print (cameraRot);
 		Camera.main.transform.localPosition = cameraPos;
 
 

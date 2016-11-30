@@ -52,7 +52,7 @@ public class EnemyControl : MonoBehaviour {
 	void FlipDirection(){
 		facingRight = !facingRight;
 
-		Quaternion enemyRot = transform.localRotation;
+		Vector3 enemyRot = transform.eulerAngles;
 
 		if (!facingRight) {
 
@@ -64,7 +64,7 @@ public class EnemyControl : MonoBehaviour {
 
 		}
 
-		transform.localRotation = enemyRot;
+		transform.eulerAngles = enemyRot;
 
 
 
