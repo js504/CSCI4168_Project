@@ -8,6 +8,9 @@ public class PlayerControl : MonoBehaviour {
 	public float speed = 10.0f;
 	public Text livesText;
 	bool facingRight = true;
+	bool rooted = false;
+
+	Rigidbody rb;
 
 	private int countlives; //counting lives
 
@@ -15,29 +18,45 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
 		countlives = 5; //started lives from five, will increase when picking up acrons and decrease when losing a fight with enemy 
 		SetLivesText (); // calling the function to display lives on screen
+		rb = GetComponent<Rigidbody>();
 	}
-	
+
+	void Update(){
+		if(Input.GetKeyDown("left ctrl")){
+			print("ctrled!");
+			rooted = !rooted;
+			animator.SetBool ("rooted", rooted);
+
+			rb.isKinematic = rooted;
+			rb.detectCollisions = !rooted;
+		}
+	}
+
 	// Update is called once per frame
 	void FixedUpdate () {
-		if (Input.GetAxis ("Horizontal") != 0) {
-			animator.SetBool ("walking", true);
 
-			if (Input.GetAxis ("Horizontal") > 0) {
-				if (!facingRight) {
-					FlipDirection ();
+
+		if (!rooted) {
+			if (Input.GetAxis ("Horizontal") != 0) {
+				animator.SetBool ("walking", true);
+
+				if (Input.GetAxis ("Horizontal") > 0) {
+					if (!facingRight) {
+						FlipDirection ();
+					}
+
+					transform.Translate (Vector3.right * Time.deltaTime * speed);
+				} else if (Input.GetAxis ("Horizontal") < 0) {
+
+					if (facingRight) {
+						FlipDirection ();
+					}
+
+					transform.Translate (Vector3.left * Time.deltaTime * speed * -1f);
 				}
-
-				transform.Translate (Vector3.right * Time.deltaTime * speed);
-			} else if (Input.GetAxis ("Horizontal") < 0){
-
-				if (facingRight) {
-					FlipDirection ();
-				}
-
-				transform.Translate (Vector3.left * Time.deltaTime * speed * -1f);
+			} else {
+				animator.SetBool ("walking", false);
 			}
-		} else {
-			animator.SetBool ("walking", false);
 		}
 	}
 
@@ -50,13 +69,11 @@ public class PlayerControl : MonoBehaviour {
 		Vector3 playerRot = transform.eulerAngles;
 
 		if (!facingRight) {
-			print ("changing Rot1");
 			cameraRot.y = 180f;
 			playerRot.y = 180f;
 
 
 		} else {
-			print ("changing Rot2");
 			cameraRot.y = 180f;
 			playerRot.y = 0f;
 
@@ -71,7 +88,6 @@ public class PlayerControl : MonoBehaviour {
 
 
 		transform.eulerAngles = playerRot;
-		print (cameraRot);
 		Camera.main.transform.localPosition = cameraPos;
 
 
