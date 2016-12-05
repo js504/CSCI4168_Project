@@ -81,12 +81,12 @@ public class PlayerControl : MonoBehaviour {
 		cameraPos.x *= -1f;
 
 
-
 		transform.eulerAngles = playerRot;
 		Camera.main.transform.localPosition = cameraPos;
+	}
 
-
-
+	public bool getFacingRight(){
+		return facingRight;
 	}
 		
 

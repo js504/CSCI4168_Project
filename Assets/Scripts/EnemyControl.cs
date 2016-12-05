@@ -13,9 +13,10 @@ public class EnemyControl : MonoBehaviour {
 
 	bool moving;
 	bool attack;
+	bool knockedOut;
 
 	int triggerHit = 0;
-
+	int acornHit = 0;
 	// Use this for initialization
 	void Start () {
 		startPos = transform.position;
@@ -25,6 +26,7 @@ public class EnemyControl : MonoBehaviour {
 		moving = true;
 	    facingLeft = true;
 		attack = false;
+		knockedOut = false;
 	}
 
 	// Update is called once per frame
@@ -34,7 +36,7 @@ public class EnemyControl : MonoBehaviour {
 		Ray sightRay;
 
 
-		if (moving) {
+		if (moving && !knockedOut) {
 			float distanceTravelled = transform.position.x - startPos.x;
 			//print (distanceTravelled);
 			if (facingLeft) {
@@ -125,25 +127,66 @@ public class EnemyControl : MonoBehaviour {
 
 	}
 
-	void OnTriggerEnter(Collider other){
 
+	IEnumerator KnockedOutRoutine(){
+
+		animator.SetBool ("walking", false);
+		animator.SetBool ("knockedOut", true);
+
+		moving = false;
+		knockedOut = true;
+
+		yield return new WaitForSeconds (10f);
+
+		knockedOut = false;
+		moving = true;
+
+		acornHit = 0;
+
+		GetComponent<Rigidbody> ().isKinematic = false;
+		GetComponent<BoxCollider> ().isTrigger = false;
+
+		animator.SetBool ("knockedOut", false);
+		animator.SetBool ("walking", true);
+
+	}
+
+	void OnTriggerEnter(Collider other){
 
 		if (other.gameObject.tag.Equals ("Player")) {
 			triggerHit++;
 
-			attackPlayer (other);
+			if (!knockedOut) {
+				attackPlayer (other);
 
-			if (triggerHit == 2) {
-				animator.SetBool ("attack", true);
+				if (triggerHit == 2) {
+					animator.SetBool ("attack", true);
+				}
 			}
 		} 
+		else if(other.gameObject.tag.Equals("AcornProjectile") && !knockedOut){
+			acornHit++;
+			if (acornHit > 2) {
+				print ("im hit!");
+				knockedOut = true;
+				GetComponent<Rigidbody> ().isKinematic = true;
+				GetComponent<BoxCollider> ().isTrigger = true;
+				StartCoroutine (KnockedOutRoutine ());
+			}
+		}
+
 	}
 
 	void OnTriggerExit(Collider other){
 
 		if (other.gameObject.tag.Equals ("Player")) {
-			
-			triggerHit--;
+		
+			if (triggerHit > 0) {
+				triggerHit--;
+			} else if (triggerHit < 0) {
+				triggerHit = 0;
+			}
+
 			print (triggerHit);
 
 			if (triggerHit == 0) {
@@ -151,9 +194,17 @@ public class EnemyControl : MonoBehaviour {
 				velocity = new Vector3 (speed, 0, 0);
 			}
 
+		} else if (other.gameObject.tag.Equals ("AcornProjectile") && !knockedOut) {
+
+			acornHit--;
+
+			if (acornHit < 0) {
+				acornHit = 0;
+			}
 		}
 
-		if (triggerHit < 2) {
+
+		if (!attack || knockedOut) {
 			animator.SetBool ("attack", false);
 		}
 			

@@ -17,10 +17,11 @@ public class PlayerCharacter : MonoBehaviour {
 
 	int atkCount = 0;
 
-
+	PlayerControl playerControl;
 
 	// Use this for initialization
 	void Start () {
+		playerControl = GetComponent<PlayerControl> ();
 		acorn = (GameObject)Instantiate (acornAmmoRef, hand);
 		acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
 		numLives = 5; //started lives from five, will increase when picking up acrons and decrease when losing a fight with enemy 
@@ -32,8 +33,6 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		print (hand.position);
-
 		if (Input.GetKeyDown ("space")) {
 			ThrowAcorn ();
 		}
@@ -59,7 +58,14 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void ThrowAcorn(){
 		acorn.transform.parent = null;
-		acorn.GetComponent<Rigidbody> ().AddRelativeForce (new Vector3(1f, 0.25f, 0f) * 30f, ForceMode.Impulse);
+		Vector3 force;
+		if (playerControl.getFacingRight ()) {
+			force = new Vector3 (1f, 0.25f, 0f);
+		} else {
+			force = new Vector3 (-1f, 0.25f, 0f);
+		}
+
+		acorn.GetComponent<Rigidbody> ().AddRelativeForce (force * 30f, ForceMode.Impulse);
 		acorn.GetComponent<Rigidbody> ().useGravity = true;
 
 		acorn = null;
