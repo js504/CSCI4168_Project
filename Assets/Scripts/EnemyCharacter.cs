@@ -3,6 +3,8 @@ using System.Collections;
 
 public class EnemyCharacter : MonoBehaviour {
 
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -12,4 +14,6 @@ public class EnemyCharacter : MonoBehaviour {
 	void Update () {
 	
 	}
+
+
 }
