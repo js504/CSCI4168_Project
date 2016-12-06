@@ -29,6 +29,7 @@ public class SwitchLevel : MonoBehaviour {
 			WaitRoutine ();
 
 			SceneManager.LoadScene (levelName, LoadSceneMode.Single);
+
 		}
 	}
 
