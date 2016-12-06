@@ -13,6 +13,8 @@ public class PlayerCharacter : MonoBehaviour {
 
 	public Transform hand;
 	public GameObject acornAmmoRef;
+	AudioSource sound;
+	public AudioClip throwAcornSound;
 
 	private GameObject acorn;
 
@@ -39,8 +41,10 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		sound = GetComponent<AudioSource> ();
 		if (Input.GetKeyDown ("space")) {
 			ThrowAcorn ();
+			sound.PlayOneShot(throwAcornSound);
 		}
 	}
 
