@@ -17,7 +17,7 @@ public class Fire : MonoBehaviour {
 		//playerFire.GetComponent<ParticleSystem> ().enableEmission = false;
 	}
 	void OnParticleCollision(GameObject other){
-		if (other.gameObject.name.Equals ("Particle System") || other.gameObject.name.Equals ("Particle System(Clone)")) {
+		if (other.gameObject.CompareTag ("Fire") || other.gameObject.name.Equals ("Particle System(Clone)")) {
 			Debug.Log ("hittttttttttt");
 			playerFire.GetComponent<ParticleSystem> ().Play();
 			StartCoroutine (stopFire ());
