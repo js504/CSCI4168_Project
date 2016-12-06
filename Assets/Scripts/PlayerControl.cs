@@ -29,7 +29,9 @@ public class PlayerControl : MonoBehaviour {
 			rb.isKinematic = rooted;
 			rb.detectCollisions = !rooted;
 
-			sound.PlayOneShot(rootingSound);//activating the rooting sound
+			if (rooted) {
+				sound.PlayOneShot (rootingSound);//activating the rooting sound
+			}
 		}
 	}
 
@@ -37,7 +39,7 @@ public class PlayerControl : MonoBehaviour {
 	void FixedUpdate () {
 
 
-		if (!rooted) {
+					if (!rooted) {
 			if (Input.GetAxis ("Horizontal") != 0) {
 				animator.SetBool ("walking", true);
 
