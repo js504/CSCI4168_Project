@@ -65,7 +65,7 @@ public class PlayerControl : MonoBehaviour {
 
 		if (!facingRight) {
 			cameraRot.y = 180f;
-			playerRot.y = 180f;
+			playerRot.y = 180.0f;
 
 
 		} else {
