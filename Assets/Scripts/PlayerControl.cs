@@ -30,7 +30,6 @@ public class PlayerControl : MonoBehaviour {
 			rb.detectCollisions = !rooted;
 
 			sound.PlayOneShot(rootingSound);//activating the rooting sound
-
 		}
 	}
 

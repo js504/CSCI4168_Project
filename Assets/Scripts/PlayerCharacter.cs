@@ -38,7 +38,7 @@ public class PlayerCharacter : MonoBehaviour {
 		sound = GetComponent<AudioSource> ();
 		if (Input.GetKeyDown ("space")) {
 			ThrowAcorn ();
-			sound.PlayOneShot(throwAcornSound);
+			sound.PlayOneShot(throwAcornSound);//activating throw sound 
 		}
 	}
 
