@@ -3,6 +3,8 @@ using System.Collections;
 
 public class PlayerControl : MonoBehaviour {
 
+	AudioSource sound;
+	public AudioClip rootingSound;
 	public Animator animator;
 	public float speed = 10.0f;
 	bool facingRight = true;
@@ -18,12 +20,17 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	void Update(){
+		
+		sound = GetComponent<AudioSource> ();
 		if(Input.GetKeyDown("left ctrl")){
 			rooted = !rooted;
 			animator.SetBool ("rooted", rooted);
 
 			rb.isKinematic = rooted;
 			rb.detectCollisions = !rooted;
+
+			sound.PlayOneShot(rootingSound);//activating the rooting sound
+
 		}
 	}
 
