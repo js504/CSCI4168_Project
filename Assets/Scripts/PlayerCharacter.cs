@@ -8,6 +8,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	int health;		//number of chops it takes the enemy to cut you down
 	int numLives;
+	int numAcorns;
 	public Text livesText;
 
 	public Transform hand;
@@ -26,7 +27,12 @@ public class PlayerCharacter : MonoBehaviour {
 		acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
 		numLives = 5; //started lives from five, will increase when picking up acrons and decrease when losing a fight with enemy 
 		SetLivesText (); // calling the function to display lives on screen
-		health = 4; 
+		health = 100;
+		numAcorns = 5;
+
+		GlobalSettings.playerHealth = health;
+		GlobalSettings.playerLives = numLives;
+		GlobalSettings.playerLives = numAcorns;
 
 		//hand = transform.Find ("PlayerMiddleFinger").transform;
 	}
