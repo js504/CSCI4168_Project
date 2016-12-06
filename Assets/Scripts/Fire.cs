@@ -32,7 +32,13 @@ public class Fire : MonoBehaviour {
 	//public GameObject hold;
 	public void OnCollisionEnter(Collision other){
 		if(playerFire.GetComponent<ParticleSystem> ().isPlaying == true){
-		Instantiate(fire, other.transform.position, Quaternion.identity);
+			Instantiate(fire, other.transform.position, Quaternion.identity, other.transform);
+		}
+		if (other.gameObject.name.Equals ("Lumberjack_enemy")) {
+			if(playerFire.GetComponent<ParticleSystem> ().isPlaying == true){
+				//destroyEnemy (other.gameObject);
+				Destroy(other.gameObject, 3);
+			}
 		}
 		//Destroy(gameObject); // destroy the grenade
 		//Destroy(hold, 3); // delete the explosion after 3 seconds
