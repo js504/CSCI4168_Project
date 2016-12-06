@@ -7,12 +7,18 @@ public class PositionPlayer : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		
 		player = GameObject.FindGameObjectWithTag ("Player");
-		if (player != null) {
-			print ("Found the player!");
+		PlayerCharacter pc = player.GetComponent<PlayerCharacter> ();
 
-			player.transform.position = new Vector3 (0f, 0f, 0f);
-		}
+		pc.SetPlayerAcorns (GlobalSettings.playerAcorns);
+		pc.SetPlayerHealth (GlobalSettings.playerHealth);
+		pc.SetPlayerLives (GlobalSettings.playerLives);
+//		if (player != null) {
+//			print ("Found the player!");
+//
+//			player.transform.position = new Vector3 (0f, 0f, 0f);
+//		}
 	}
 	
 	// Update is called once per frame

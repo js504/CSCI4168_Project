@@ -22,6 +22,9 @@ public class PlayerCharacter : MonoBehaviour {
 
 	PlayerControl playerControl;
 
+	bool thrown = false;
+
+	Vector3 weaponOrigin = new Vector3 (0f, 0f, 0f);
 	// Use this for initialization
 	void Start () {
 		playerControl = GetComponent<PlayerControl> ();
@@ -45,9 +48,16 @@ public class PlayerCharacter : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKeyDown ("space")) {
+			thrown = true;
 			ThrowAcorn ();
 			sound.PlayOneShot(throwAcornSound);//activating throw sound 
 		}
+
+		if (!thrown) {
+			acorn.transform.localPosition = weaponOrigin;
+		}
+
+
 	}
 
 	//an acorn object will be deactivated everytime it collides with the player
@@ -84,6 +94,34 @@ public class PlayerCharacter : MonoBehaviour {
 
 		acorn = (GameObject)Instantiate (acornAmmoRef, hand);
 		acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
+
+		thrown = false;
+
 	}
 
+	public void SetPlayerHealth(int health){
+		this.health = health;
+	}
+
+
+	public void SetPlayerAcorns(int numAcorns){
+		this.numAcorns = numAcorns;
+	}
+
+	public void SetPlayerLives(int numLives){
+		this.numLives = numLives;
+	}
+
+	public int GetPlayerHealth(){
+		return health;
+	}
+
+
+	public int GetPlayerAcorns(){
+		return numAcorns;
+	}
+
+	public int GetPlayerLives(){
+		return numLives;
+	}
 }
