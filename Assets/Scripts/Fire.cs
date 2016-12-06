@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Fire : MonoBehaviour {
 	public Transform playerFire;
-
+	public AudioClip[] audioClip;
+	public AudioSource audio;
 	//public Transform fire;
 	// Use this for initialization
 	void Start () {
@@ -38,10 +39,18 @@ public class Fire : MonoBehaviour {
 			if(playerFire.GetComponent<ParticleSystem> ().isPlaying == true){
 				//destroyEnemy (other.gameObject);
 				Destroy(other.gameObject, 3);
+				audio.clip = audioClip [0];
+
+				StartCoroutine (dyeSound ());
 			}
 		}
 		//Destroy(gameObject); // destroy the grenade
 		//Destroy(hold, 3); // delete the explosion after 3 seconds
 	}
+	IEnumerator dyeSound(){
+		yield return new WaitForSeconds (3);
+		audio.Play ();
+	}
+
 }
 
