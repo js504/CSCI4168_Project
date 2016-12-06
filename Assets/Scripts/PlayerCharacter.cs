@@ -35,7 +35,7 @@ public class PlayerCharacter : MonoBehaviour {
 		numLives = 5; //started lives from five, will increase when picking up acrons and decrease when losing a fight with enemy 
 		SetLivesText (); // calling the function to display lives on screen
 		health = 100;
-		numAcorns = 5;
+		numAcorns = 2;
 
 		GlobalSettings.playerHealth = health;
 		GlobalSettings.playerLives = numLives;
@@ -48,9 +48,11 @@ public class PlayerCharacter : MonoBehaviour {
 	void Update () {
 		
 		if (Input.GetKeyDown ("space")) {
-			thrown = true;
-			ThrowAcorn ();
-			sound.PlayOneShot(throwAcornSound);//activating throw sound 
+			if(numAcorns > 0){
+				thrown = true;
+				ThrowAcorn ();
+				sound.PlayOneShot(throwAcornSound);//activating throw sound 
+			}
 		}
 
 		if (!thrown) {
@@ -89,6 +91,8 @@ public class PlayerCharacter : MonoBehaviour {
 
 		acorn.GetComponent<Rigidbody> ().AddRelativeForce (force * 30f, ForceMode.Impulse);
 		acorn.GetComponent<Rigidbody> ().useGravity = true;
+
+		numAcorns--;
 
 		acorn = null;
 

@@ -11,8 +11,8 @@ public class PositionPlayer : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag ("Player");
 		PlayerCharacter pc = player.GetComponent<PlayerCharacter> ();
 
-		pc.SetPlayerAcorns (GlobalSettings.playerAcorns);
-		pc.SetPlayerHealth (GlobalSettings.playerHealth);
+		pc.SetPlayerAcorns (3);
+		pc.SetPlayerHealth (100);
 		pc.SetPlayerLives (GlobalSettings.playerLives);
 //		if (player != null) {
 //			print ("Found the player!");
