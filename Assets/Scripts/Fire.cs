@@ -47,6 +47,14 @@ public class Fire : MonoBehaviour {
 		//Destroy(gameObject); // destroy the grenade
 		//Destroy(hold, 3); // delete the explosion after 3 seconds
 	}
+	public void OnTriggerEnter(Collider other){
+		if(playerFire.GetComponent<ParticleSystem> ().isPlaying == true){
+			Instantiate(fire, other.transform.position, Quaternion.identity, other.transform);
+		}
+	    
+		//Destroy(gameObject); // destroy the grenade
+		//Destroy(hold, 3); // delete the explosion after 3 seconds
+	}
 	IEnumerator dyeSound(){
 		yield return new WaitForSeconds (3);
 		audio.Play ();
