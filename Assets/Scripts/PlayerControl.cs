@@ -17,19 +17,26 @@ public class PlayerControl : MonoBehaviour {
 	void Start () {
 		DontDestroyOnLoad (this);
 		rb = GetComponent<Rigidbody>();
+		sound = GetComponent<AudioSource> ();
+
 	}
 
 	void Update(){
-		
-		sound = GetComponent<AudioSource> ();
+
 		if(Input.GetKeyDown("left ctrl")){
 			rooted = !rooted;
 			animator.SetBool ("rooted", rooted);
 
+
 			rb.isKinematic = rooted;
 			rb.detectCollisions = !rooted;
 
-			sound.PlayOneShot(rootingSound);//activating the rooting sound
+			if(rooted){
+				sound.PlayOneShot(rootingSound);//activating the rooting sound
+			}
+
+
+	
 		}
 	}
 
