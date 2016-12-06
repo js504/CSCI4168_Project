@@ -25,6 +25,8 @@ public class PlayerCharacter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		playerControl = GetComponent<PlayerControl> ();
+		sound = GetComponent<AudioSource> ();
+
 		acorn = (GameObject)Instantiate (acornAmmoRef, hand);
 		acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
 		numLives = 5; //started lives from five, will increase when picking up acrons and decrease when losing a fight with enemy 
@@ -41,7 +43,7 @@ public class PlayerCharacter : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		sound = GetComponent<AudioSource> ();
+		
 		if (Input.GetKeyDown ("space")) {
 			ThrowAcorn ();
 			sound.PlayOneShot(throwAcornSound);
