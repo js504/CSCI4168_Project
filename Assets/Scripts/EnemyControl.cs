@@ -175,6 +175,7 @@ public class EnemyControl : MonoBehaviour {
 
 						if (triggerHit == 2) {
 							animator.SetBool ("attack", true);
+							other.gameObject.GetComponent<PlayerCharacter> ().hit (2);
 						}
 
 

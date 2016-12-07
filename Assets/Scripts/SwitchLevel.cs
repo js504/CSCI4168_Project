@@ -31,7 +31,7 @@ public class SwitchLevel : MonoBehaviour {
 	IEnumerator WaitRoutine(){
 
 		yield return new WaitForSeconds (20f);
-		SceneManager.LoadScene (GlobalSettings.levelIndex, LoadSceneMode.Single);
+		SceneManager.LoadScene ("EndOfLevel", LoadSceneMode.Single);
 
 	}
 
