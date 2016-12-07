@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class PlayerCharacter : MonoBehaviour {
@@ -25,7 +26,12 @@ public class PlayerCharacter : MonoBehaviour {
 	bool thrown = false;
 	bool onFire = false;
 
+
+
 	Vector3 weaponOrigin = new Vector3 (0f, 0f, 0f);
+
+	Vector3 startPos;
+
 	// Use this for initialization
 	void Start () {
 		playerControl = GetComponent<PlayerControl> ();
@@ -41,6 +47,8 @@ public class PlayerCharacter : MonoBehaviour {
 		GlobalSettings.playerHealth = health;
 		GlobalSettings.playerLives = numLives;
 		GlobalSettings.playerLives = numAcorns;
+
+		startPos = transform.position;
 
 		//hand = transform.Find ("PlayerMiddleFinger").transform;
 	}
@@ -138,5 +146,26 @@ public class PlayerCharacter : MonoBehaviour {
 
 	public bool GetOnFire(){
 		return onFire;
+	}
+
+	public void hit(int damage){
+		health -= damage;
+
+		if (health <= 0){
+
+			numLives--;
+
+			if (numLives <= 0) {
+				
+				SceneManager.LoadScene (4, LoadSceneMode.Single);
+			} else {
+				health = 100;
+
+				transform.position = startPos;
+			}
+
+
+
+		}
 	}
 }

@@ -14,7 +14,7 @@ public class EndOfLevel : MonoBehaviour {
 
 	public void LoadNextLevel(){
 
-		if (GlobalSettings.levelIndex == 3) {
+		if (GlobalSettings.levelIndex == 4) {
 			GlobalSettings.levelIndex = 1;
 		} else {
 			GlobalSettings.levelIndex++;
