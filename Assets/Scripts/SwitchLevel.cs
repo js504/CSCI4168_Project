@@ -20,8 +20,8 @@ public class SwitchLevel : MonoBehaviour {
 		if (other.gameObject.CompareTag ("Player")) {
 			PlayerCharacter pc = other.gameObject.GetComponent<PlayerCharacter> ();
 
-			GlobalSettings.playerAcorns = pc.GetPlayerAcorns ();
-			GlobalSettings.playerHealth = pc.GetPlayerHealth ();
+			GlobalSettings.playerAcorns = 10;
+			GlobalSettings.playerHealth = 100;
 			GlobalSettings.playerLives = pc.GetPlayerLives ();
 			StartCoroutine (WaitRoutine ());
 		}
