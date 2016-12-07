@@ -8,16 +8,24 @@ public class EndOfLevel : MonoBehaviour {
 	public Text score;
 	// Use this for initialization
 	void Start () {
-		score.text = GlobalSettings.score.ToString ();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+		score.text = "Score: " + GlobalSettings.score.ToString ();
 	}
 
+
 	public void LoadNextLevel(){
-		GlobalSettings.levelIndex++;
+
+		if (GlobalSettings.levelIndex == 3) {
+			GlobalSettings.levelIndex = 1;
+		} else {
+			GlobalSettings.levelIndex++;
+		}
+
 		SceneManager.LoadScene (GlobalSettings.levelIndex, LoadSceneMode.Single); 
 	}
+
+	public void ExitGame(){
+		Application.Quit ();
+	}
+
+
 }

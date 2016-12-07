@@ -168,11 +168,18 @@ public class EnemyControl : MonoBehaviour {
 				triggerHit++;
 
 				if (!knockedOut) {
-					attackPlayer (other);
 
-					if (triggerHit == 2) {
-						animator.SetBool ("attack", true);
+					if ((other.gameObject.transform.position.x < transform.position.x) && facingLeft || (other.gameObject.transform.position.x > transform.position.x) && facingLeft) {
+
+						attackPlayer (other);
+
+						if (triggerHit == 2) {
+							animator.SetBool ("attack", true);
+						}
+
+
 					}
+
 				}
 			} else if (other.gameObject.tag.Equals ("AcornProjectile") && !knockedOut) {
 				acornHit++;

@@ -31,8 +31,8 @@ public class PlayerCharacter : MonoBehaviour {
 		playerControl = GetComponent<PlayerControl> ();
 		sound = GetComponent<AudioSource> ();
 
-		acorn = (GameObject)Instantiate (acornAmmoRef, hand);
-		acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
+		//acorn = (GameObject)Instantiate (acornAmmoRef, hand);
+		//acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
 		numLives = 5; //started lives from five, will increase when picking up acrons and decrease when losing a fight with enemy 
 		SetLivesText (); // calling the function to display lives on screen
 		health = 100;
@@ -57,7 +57,7 @@ public class PlayerCharacter : MonoBehaviour {
 		}
 
 		if (!thrown) {
-			acorn.transform.localPosition = weaponOrigin;
+			//acorn.transform.localPosition = weaponOrigin;
 		}
 
 
@@ -82,6 +82,9 @@ public class PlayerCharacter : MonoBehaviour {
 	}
 
 	void ThrowAcorn(){
+		acorn = (GameObject)Instantiate (acornAmmoRef, hand);
+		acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
+
 		acorn.transform.parent = null;
 		Vector3 force;
 		if (playerControl.getFacingRight ()) {
@@ -97,8 +100,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 		acorn = null;
 
-		acorn = (GameObject)Instantiate (acornAmmoRef, hand);
-		acorn.transform.localPosition = new Vector3 (0f, 0f, 0f);
+
 
 		thrown = false;
 
