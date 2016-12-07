@@ -30,7 +30,7 @@ public class SwitchLevel : MonoBehaviour {
 
 	IEnumerator WaitRoutine(){
 
-		yield return new WaitForSeconds (10f);
+		yield return new WaitForSeconds (20f);
 		SceneManager.LoadScene (GlobalSettings.levelIndex, LoadSceneMode.Single);
 
 	}
