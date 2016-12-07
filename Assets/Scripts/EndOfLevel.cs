@@ -18,6 +18,6 @@ public class EndOfLevel : MonoBehaviour {
 
 	public void LoadNextLevel(){
 		GlobalSettings.levelIndex++;
-		SceneManager.LoadScene (GlobalSettings.levelIndex, LoadSceneMode.Single);
+		SceneManager.LoadScene (GlobalSettings.levelIndex, LoadSceneMode.Single); 
 	}
 }
