@@ -4,8 +4,7 @@ using UnityEngine.SceneManagement;
 
 public class SwitchLevel : MonoBehaviour {
 
-	public string levelName = "Level2";
-
+	public string levelName = "EndOfLevel";
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +13,7 @@ public class SwitchLevel : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-	
+
 	}
 
 
@@ -25,21 +24,15 @@ public class SwitchLevel : MonoBehaviour {
 			GlobalSettings.playerAcorns = pc.GetPlayerAcorns ();
 			GlobalSettings.playerHealth = pc.GetPlayerHealth ();
 			GlobalSettings.playerLives = pc.GetPlayerLives ();
-		
-			WaitRoutine ();
-
-			SceneManager.LoadScene (levelName, LoadSceneMode.Single);
-
+			StartCoroutine (WaitRoutine ());
 		}
 	}
 
 
 	IEnumerator WaitRoutine(){
 
-		yield return new WaitForSeconds (2f);
-
-
-
+		yield return new WaitForSeconds (10f);
+		SceneManager.LoadScene (levelName, LoadSceneMode.Single);
 
 	}
 
