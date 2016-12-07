@@ -8,7 +8,7 @@ public class EndOfLevel : MonoBehaviour {
 	public Text score;
 	// Use this for initialization
 	void Start () {
-		score.text = GlobalSettings.playerHealth.ToString();
+		score.text = GlobalSettings.score.ToString ();
 	}
 	
 	// Update is called once per frame
@@ -17,6 +17,7 @@ public class EndOfLevel : MonoBehaviour {
 	}
 
 	public void LoadNextLevel(){
-		SceneManager.LoadScene ("Level2", LoadSceneMode.Single);
+		GlobalSettings.levelIndex++;
+		SceneManager.LoadScene (GlobalSettings.levelIndex, LoadSceneMode.Single);
 	}
 }

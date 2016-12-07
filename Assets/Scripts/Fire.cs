@@ -38,10 +38,10 @@ public class Fire : MonoBehaviour {
 		if (other.gameObject.name.Equals ("Lumberjack_enemy")) {
 			if(playerFire.GetComponent<ParticleSystem> ().isPlaying == true){
 				//destroyEnemy (other.gameObject);
-				Destroy(other.gameObject, 3);
+
 				audio.clip = audioClip [0];
 
-				StartCoroutine (dyeSound ());
+				StartCoroutine (dyeSound (other.gameObject));
 			}
 		}
 		//Destroy(gameObject); // destroy the grenade
@@ -50,14 +50,21 @@ public class Fire : MonoBehaviour {
 	public void OnTriggerEnter(Collider other){
 		if(playerFire.GetComponent<ParticleSystem> ().isPlaying == true){
 			Instantiate(fire, other.transform.position, Quaternion.identity, other.transform);
+
+
 		}
 	    
 		//Destroy(gameObject); // destroy the grenade
 		//Destroy(hold, 3); // delete the explosion after 3 seconds
 	}
-	IEnumerator dyeSound(){
+	IEnumerator dyeSound(GameObject other){
+		GlobalSettings.score += 200;
+		other.GetComponent<EnemyControl> ().SetOnFire (true);
+		other.GetComponent<Rigidbody> ().isKinematic = true;
 		yield return new WaitForSeconds (3);
 		audio.Play ();
+		Destroy(other);
+	
 	}
 
 }

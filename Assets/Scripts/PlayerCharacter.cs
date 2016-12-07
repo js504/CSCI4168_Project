@@ -23,6 +23,7 @@ public class PlayerCharacter : MonoBehaviour {
 	PlayerControl playerControl;
 
 	bool thrown = false;
+	bool onFire = false;
 
 	Vector3 weaponOrigin = new Vector3 (0f, 0f, 0f);
 	// Use this for initialization
@@ -127,5 +128,13 @@ public class PlayerCharacter : MonoBehaviour {
 
 	public int GetPlayerLives(){
 		return numLives;
+	}
+
+	public void SetOnFire(bool onFire){
+		this.onFire = onFire;
+	}
+
+	public bool GetOnFire(){
+		return onFire;
 	}
 }

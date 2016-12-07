@@ -17,6 +17,10 @@ public class EnemyControl : MonoBehaviour {
 
 	int triggerHit = 0;
 	int acornHit = 0;
+
+
+	bool burning;
+
 	// Use this for initialization
 	void Start () {
 		startPos = transform.position;
@@ -27,6 +31,7 @@ public class EnemyControl : MonoBehaviour {
 	    facingLeft = true;
 		attack = false;
 		knockedOut = false;
+		burning = false;
 	}
 
 	// Update is called once per frame
@@ -35,40 +40,45 @@ public class EnemyControl : MonoBehaviour {
 		RaycastHit hit;
 		Ray sightRay;
 
+		if (burning) {
+			animator.SetBool ("walking", false);
+			animator.SetBool ("attack", false);
+			animator.SetBool ("knockedOut", true);
+		} else {
+			if (moving && !knockedOut) {
+				float distanceTravelled = transform.position.x - startPos.x;
+				//print (distanceTravelled);
+				if (facingLeft) {
 
-		if (moving && !knockedOut) {
-			float distanceTravelled = transform.position.x - startPos.x;
-			//print (distanceTravelled);
-			if (facingLeft) {
 
+					if ((-distanceTravelled >= patrolDistance) && !attack) {
 
-				if ((-distanceTravelled >= patrolDistance) && !attack) {
+						FlipDirection ();
+					}
 
-					FlipDirection ();
-				}
+					sightRay = new Ray (transform.position, Vector3.left);
 
-				sightRay = new Ray (transform.position, Vector3.left);
-
-				transform.Translate (velocity * Time.deltaTime * -1.0f);
-			} else {
+					transform.Translate (velocity * Time.deltaTime * -1.0f);
+				} else {
 
 							
-				if ((distanceTravelled >= patrolDistance) && !attack) {
+					if ((distanceTravelled >= patrolDistance) && !attack) {
 
-					FlipDirection ();
+						FlipDirection ();
+
+					}
+
+					sightRay = new Ray (transform.position, Vector3.right);
+
+
+					transform.Translate (velocity * Time.deltaTime * -1.0f);
 
 				}
 
-				sightRay = new Ray (transform.position, Vector3.right);
-
-
-				transform.Translate (velocity * Time.deltaTime * -1.0f);
-
-			}
-
-			if (Physics.Raycast(sightRay, out hit, 100.0f)) {
-				if (hit.collider.tag == "Player") {
-					//print ("i see the player");
+				if (Physics.Raycast (sightRay, out hit, 100.0f)) {
+					if (hit.collider.tag == "Player") {
+						//print ("i see the player");
+					}
 				}
 			}
 		}
@@ -153,25 +163,26 @@ public class EnemyControl : MonoBehaviour {
 
 	void OnTriggerEnter(Collider other){
 
-		if (other.gameObject.tag.Equals ("Player")) {
-			triggerHit++;
+		if (!burning) {
+			if (other.gameObject.tag.Equals ("Player")) {
+				triggerHit++;
 
-			if (!knockedOut) {
-				attackPlayer (other);
+				if (!knockedOut) {
+					attackPlayer (other);
 
-				if (triggerHit == 2) {
-					animator.SetBool ("attack", true);
+					if (triggerHit == 2) {
+						animator.SetBool ("attack", true);
+					}
 				}
-			}
-		} 
-		else if(other.gameObject.tag.Equals("AcornProjectile") && !knockedOut){
-			acornHit++;
-			if (acornHit > 2) {
-				print ("im hit!");
-				knockedOut = true;
-				GetComponent<Rigidbody> ().isKinematic = true;
-				GetComponent<BoxCollider> ().isTrigger = true;
-				StartCoroutine (KnockedOutRoutine ());
+			} else if (other.gameObject.tag.Equals ("AcornProjectile") && !knockedOut) {
+				acornHit++;
+				if (acornHit > 2) {
+					print ("im hit!");
+					knockedOut = true;
+					GetComponent<Rigidbody> ().isKinematic = true;
+					GetComponent<BoxCollider> ().isTrigger = true;
+					StartCoroutine (KnockedOutRoutine ());
+				}
 			}
 		}
 
@@ -179,35 +190,45 @@ public class EnemyControl : MonoBehaviour {
 
 	void OnTriggerExit(Collider other){
 
-		if (other.gameObject.tag.Equals ("Player")) {
+		if (!burning) {
+			if (other.gameObject.tag.Equals ("Player")) {
 		
-			if (triggerHit > 0) {
-				triggerHit--;
-			} else if (triggerHit < 0) {
-				triggerHit = 0;
+				if (triggerHit > 0) {
+					triggerHit--;
+				} else if (triggerHit < 0) {
+					triggerHit = 0;
+				}
+
+				print (triggerHit);
+
+				if (triggerHit == 0) {
+					attack = false;
+					velocity = new Vector3 (speed, 0, 0);
+				}
+
+			} else if (other.gameObject.tag.Equals ("AcornProjectile") && !knockedOut) {
+
+				acornHit--;
+
+				if (acornHit < 0) {
+					acornHit = 0;
+				}
 			}
 
-			print (triggerHit);
 
-			if (triggerHit == 0) {
-				attack = false;
-				velocity = new Vector3 (speed, 0, 0);
+			if (!attack || knockedOut) {
+				animator.SetBool ("attack", false);
 			}
-
-		} else if (other.gameObject.tag.Equals ("AcornProjectile") && !knockedOut) {
-
-			acornHit--;
-
-			if (acornHit < 0) {
-				acornHit = 0;
-			}
-		}
-
-
-		if (!attack || knockedOut) {
-			animator.SetBool ("attack", false);
 		}
 			
+	}
+
+	public void SetOnFire(bool onFire){
+		this.burning = onFire;
+	}
+
+	public bool GetOnFire(){
+		return burning;
 	}
 
 }
