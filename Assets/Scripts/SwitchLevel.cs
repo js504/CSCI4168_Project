@@ -4,7 +4,6 @@ using UnityEngine.SceneManagement;
 
 public class SwitchLevel : MonoBehaviour {
 
-	public string levelName = "EndOfLevel";
 
 	// Use this for initialization
 	void Start () {
@@ -32,7 +31,7 @@ public class SwitchLevel : MonoBehaviour {
 	IEnumerator WaitRoutine(){
 
 		yield return new WaitForSeconds (10f);
-		SceneManager.LoadScene (levelName, LoadSceneMode.Single);
+		SceneManager.LoadScene (GlobalSettings.levelIndex, LoadSceneMode.Single);
 
 	}
 

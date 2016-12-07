@@ -10,7 +10,6 @@ public class PlayerCharacter : MonoBehaviour {
 	int health;		//number of chops it takes the enemy to cut you down
 	int numLives;
 	int numAcorns;
-	public Text livesText;
 
 	public Transform hand;
 	public GameObject acornAmmoRef;
@@ -86,7 +85,7 @@ public class PlayerCharacter : MonoBehaviour {
 
 	void SetLivesText ()
 	{
-		livesText.text= "Lives: " + numLives.ToString();
+		//livesText.text= "Lives: " + numLives.ToString();
 	}
 
 	void ThrowAcorn(){
@@ -158,6 +157,7 @@ public class PlayerCharacter : MonoBehaviour {
 			if (numLives <= 0) {
 				
 				SceneManager.LoadScene (4, LoadSceneMode.Single);
+
 			} else {
 				health = 100;
 
